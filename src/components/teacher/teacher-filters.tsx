@@ -102,7 +102,7 @@ export function TeacherFilters({ total }: { total: number }) {
         )}
       >
         <div className="min-h-0">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 p-3 rounded-xl border border-[var(--border)] bg-[var(--surface-muted)]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 p-3 rounded-xl border border-[var(--border)] bg-[var(--surface-muted)]">
             <FilterSelect
               label="Fan"
               value={subject}
@@ -156,10 +156,10 @@ export function TeacherFilters({ total }: { total: number }) {
             </button>
           )}
         </p>
-        <div className="inline-flex items-center gap-2 text-sm">
-          <span className="text-subtle">Saralash:</span>
+        <div className="flex items-center gap-2 text-sm w-full sm:w-auto">
+          <span className="text-subtle shrink-0">Saralash:</span>
           <Select value={sort} onValueChange={(v) => setParam("sort", v)}>
-            <SelectTrigger className="h-9 w-44">
+            <SelectTrigger className="h-9 w-full sm:w-44">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>

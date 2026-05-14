@@ -22,8 +22,8 @@ export default function PostingChoicePage() {
         title="Siz kim sifatida boshlamoqchisiz?"
         description="Ikki yo'nalish mavjud. Ustoz sifatida rezyume joylang yoki o'quv markazi sifatida vakansiya e'lon qiling. Bepul, 2 daqiqa."
       />
-      <section className="container-page pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+      <section className="container-page pb-16 sm:pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 max-w-5xl mx-auto">
           <ChoiceCard
             href="/rezyume-joylash"
             icon={<GraduationCap className="size-7" />}
@@ -89,7 +89,7 @@ function ChoiceCard({
     <Link
       href={href}
       className={[
-        "group relative flex flex-col gap-6 rounded-3xl border p-7 sm:p-9 shadow-soft transition-all",
+        "group relative flex flex-col gap-5 sm:gap-6 rounded-3xl border p-5 sm:p-9 shadow-soft transition-all",
         "hover:-translate-y-1 hover:shadow-float focus-visible:-translate-y-1 focus-visible:shadow-float",
         isAccent
           ? "border-accent-300 bg-[color-mix(in_oklch,var(--color-accent-100)_55%,var(--surface))] hover:border-accent-500"
@@ -99,7 +99,7 @@ function ChoiceCard({
       <div className="flex items-start justify-between">
         <span
           className={[
-            "grid place-items-center size-14 rounded-2xl transition-transform group-hover:scale-110",
+            "grid place-items-center size-12 sm:size-14 rounded-2xl transition-transform group-hover:scale-110",
             isAccent
               ? "bg-accent-500 text-accent-900"
               : "bg-brand-900 text-white dark:bg-brand-100 dark:text-brand-900",
@@ -130,7 +130,7 @@ function ChoiceCard({
         >
           {role}
         </p>
-        <h3 className="mt-1.5 font-display text-2xl sm:text-3xl font-bold tracking-tight">
+        <h3 className="mt-1.5 font-display text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight">
           {title}
         </h3>
         <p

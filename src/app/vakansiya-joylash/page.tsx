@@ -72,7 +72,7 @@ export default function VacancyFormPage() {
           <div className="mx-auto grid place-items-center size-16 rounded-2xl bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
             <CheckCircle2 className="size-8" />
           </div>
-          <h1 className="mt-6 font-display text-3xl sm:text-4xl font-bold tracking-tight">
+          <h1 className="mt-6 font-display text-2xl sm:text-4xl font-bold tracking-tight">
             Vakansiyangiz ko'rib chiqishga yuborildi
           </h1>
           <p className="mt-3 text-muted">
@@ -107,7 +107,7 @@ export default function VacancyFormPage() {
           O'quv markazi
         </span>
       </div>
-      <h1 className="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight">
+      <h1 className="mt-3 font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
         Vakansiya joylashtirish
       </h1>
       <p className="mt-2 text-muted">
@@ -121,7 +121,7 @@ export default function VacancyFormPage() {
 
       <form
         onSubmit={submit}
-        className="mt-8 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8 shadow-soft"
+        className="mt-8 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 sm:p-8 shadow-soft"
       >
         <div className={cn(step === 0 ? "block" : "hidden", "space-y-5")}>
           <Field label="O'quv markazi nomi" required>
@@ -341,14 +341,16 @@ export default function VacancyFormPage() {
           </div>
         </div>
 
-        <div className="mt-8 flex items-center justify-between gap-3">
+        <div className="mt-8 flex items-center justify-between gap-2 sm:gap-3">
           <Button
             type="button"
             variant="ghost"
             onClick={() => setStep((s) => Math.max(0, s - 1))}
             disabled={step === 0}
+            className="shrink-0"
           >
-            <ArrowLeft className="size-4" /> Orqaga
+            <ArrowLeft className="size-4" />
+            <span className="hidden sm:inline">Orqaga</span>
           </Button>
           {step < steps.length - 1 ? (
             <Button

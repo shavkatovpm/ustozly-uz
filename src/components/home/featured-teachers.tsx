@@ -10,6 +10,18 @@ import { cn } from "@/lib/utils";
 
 export function FeaturedTeachers({ teachers }: { teachers: Teacher[] }) {
   const [center, setCenter] = React.useState(Math.floor(teachers.length / 2));
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const mq = window.matchMedia("(max-width: 639px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  const txStep = isMobile ? 70 : 110;
+  const visibleRange = isMobile ? 1 : 2;
 
   return (
     <section className="container-page pt-20 sm:pt-24 relative">
@@ -22,15 +34,15 @@ export function FeaturedTeachers({ teachers }: { teachers: Teacher[] }) {
       />
 
       <div
-        className="mt-10 flex items-center justify-center min-h-[340px] sm:min-h-[380px] py-4"
+        className="mt-10 flex items-center justify-center min-h-[340px] sm:min-h-[380px] py-4 overflow-hidden"
         style={{ perspective: "1400px" }}
       >
         {teachers.map((t, i) => {
           const offset = i - center;
           const abs = Math.abs(offset);
-          const hidden = abs > 2;
+          const hidden = abs > visibleRange;
           const rotY = offset * -22;
-          const tx = offset * 110;
+          const tx = offset * txStep;
           const scale = 1 - abs * 0.14;
           const opacity = 1 - abs * 0.22;
           return (
@@ -40,7 +52,7 @@ export function FeaturedTeachers({ teachers }: { teachers: Teacher[] }) {
               onMouseEnter={() => setCenter(i)}
               aria-label={`${t.name} profiliga o'tish`}
               className={cn(
-                "absolute rounded-2xl border border-white/60 bg-white/70 backdrop-blur-xl p-5 shadow-float transition-all duration-500 w-60 sm:w-64",
+                "absolute rounded-2xl border border-white/60 bg-white/70 backdrop-blur-xl p-4 sm:p-5 shadow-float transition-all duration-500 w-[14rem] sm:w-64",
                 offset === 0 && "z-30",
                 abs === 1 && "z-20",
                 abs === 2 && "z-10",
@@ -52,8 +64,12 @@ export function FeaturedTeachers({ teachers }: { teachers: Teacher[] }) {
                 transformStyle: "preserve-3d",
               }}
             >
-              <Avatar name={t.name} size={88} className="mx-auto ring-4 ring-white/60" />
-              <p className="mt-3 font-display font-bold text-center text-base sm:text-lg">
+              <Avatar
+                name={t.name}
+                size={isMobile ? 72 : 88}
+                className="mx-auto ring-4 ring-white/60"
+              />
+              <p className="mt-3 font-display font-bold text-center text-base sm:text-lg line-clamp-1">
                 {t.name}
               </p>
               <p className="mt-0.5 text-center text-xs text-muted line-clamp-1">

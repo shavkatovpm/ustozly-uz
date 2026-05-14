@@ -55,17 +55,19 @@ const counts: Record<string, number> = {
   tarix: 58,
 };
 
+// mobile: 2-col flow, big item spans full row.
+// md+ : 4-col bento grid.
 const spans = [
-  "col-span-2 row-span-2", // big featured
-  "col-span-2 row-span-1",
-  "col-span-1 row-span-1",
-  "col-span-1 row-span-2",
-  "col-span-2 row-span-1",
-  "col-span-1 row-span-1",
-  "col-span-1 row-span-1",
-  "col-span-2 row-span-1",
-  "col-span-1 row-span-1",
-  "col-span-1 row-span-1",
+  "col-span-2 md:col-span-2 md:row-span-2", // big featured
+  "col-span-1 md:col-span-2 md:row-span-1",
+  "col-span-1 md:col-span-1 md:row-span-1",
+  "col-span-1 md:col-span-1 md:row-span-2",
+  "col-span-2 md:col-span-2 md:row-span-1",
+  "col-span-1 md:col-span-1 md:row-span-1",
+  "col-span-1 md:col-span-1 md:row-span-1",
+  "col-span-2 md:col-span-2 md:row-span-1",
+  "col-span-1 md:col-span-1 md:row-span-1",
+  "col-span-1 md:col-span-1 md:row-span-1",
 ];
 
 export function Categories() {
@@ -80,17 +82,18 @@ export function Categories() {
         ctaLabel="Barcha fanlar"
       />
 
-      <div className="mt-8 grid grid-cols-4 grid-rows-4 gap-3 min-h-[460px]">
+      <div className="mt-6 sm:mt-8 grid grid-cols-2 md:grid-cols-4 md:grid-rows-4 gap-2.5 sm:gap-3 md:min-h-[460px]">
         {subjs.map((s, i) => {
           const Icon = iconMap[s.icon] ?? BookOpen;
           const big =
-            spans[i].includes("col-span-2") && spans[i].includes("row-span-2");
+            spans[i].includes("md:col-span-2") &&
+            spans[i].includes("md:row-span-2");
           return (
             <Link
               key={s.slug}
               href={`/ustozlar?subject=${s.slug}`}
               className={cn(
-                "group relative overflow-hidden rounded-2xl border border-white/60 bg-white/50 backdrop-blur-xl p-4 sm:p-5 shadow-soft hover:-translate-y-0.5 hover:bg-white/70 transition-all flex flex-col",
+                "group relative overflow-hidden rounded-2xl border border-white/60 bg-white/50 backdrop-blur-xl p-3.5 sm:p-5 shadow-soft hover:-translate-y-0.5 hover:bg-white/70 transition-all flex flex-col min-h-[112px] md:min-h-0",
                 spans[i],
               )}
             >
@@ -105,14 +108,14 @@ export function Categories() {
                 <span
                   className={cn(
                     "inline-flex items-center justify-center rounded-xl transition-transform group-hover:scale-110",
-                    big ? "size-14" : "size-10",
+                    big ? "size-11 md:size-14" : "size-10",
                   )}
                   style={{
                     backgroundColor: `color-mix(in oklch, ${s.color} 22%, transparent)`,
                     color: s.color,
                   }}
                 >
-                  <Icon className={big ? "size-7" : "size-5"} />
+                  <Icon className={big ? "size-5 md:size-7" : "size-5"} />
                 </span>
                 {big && (
                   <span className="inline-flex items-center gap-1 text-[10px] font-medium text-accent-800 bg-accent-100/70 backdrop-blur rounded-full px-2 py-0.5">
@@ -120,11 +123,11 @@ export function Categories() {
                   </span>
                 )}
               </div>
-              <div className="relative mt-auto pt-4">
+              <div className="relative mt-auto pt-3 md:pt-4">
                 <p
                   className={cn(
                     "font-display font-bold leading-tight",
-                    big ? "text-xl sm:text-2xl" : "text-sm sm:text-base",
+                    big ? "text-base sm:text-xl md:text-2xl" : "text-sm sm:text-base",
                   )}
                 >
                   {s.name}

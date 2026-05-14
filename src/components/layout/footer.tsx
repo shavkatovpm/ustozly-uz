@@ -52,10 +52,10 @@ const cols = [
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-[var(--border)] bg-[var(--surface)]">
-      <div className="container-page py-14">
-        <div className="grid grid-cols-1 md:grid-cols-[1.4fr_repeat(3,1fr)] gap-10">
-          <div className="space-y-4">
+    <footer className="mt-16 sm:mt-24 border-t border-[var(--border)] bg-[var(--surface)]">
+      <div className="container-page py-10 sm:py-14">
+        <div className="grid grid-cols-2 md:grid-cols-[1.4fr_repeat(3,1fr)] gap-x-6 gap-y-8 md:gap-10">
+          <div className="col-span-2 md:col-span-1 space-y-4">
             <Logo />
             <p className="text-sm text-muted max-w-sm">
               O'zbekistondagi ustozlar va o'quv markazlarini bog'lovchi raqamli
@@ -96,7 +96,7 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-6 border-t border-[var(--border)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-subtle">
+        <div className="mt-10 sm:mt-12 pt-6 border-t border-[var(--border)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3 text-xs text-subtle">
           <p>© {new Date().getFullYear()} Ustozly.uz — barcha huquqlar himoyalangan.</p>
           <p>O'zbekistonda yaratilgan · Ta'lim sohasi uchun</p>
         </div>

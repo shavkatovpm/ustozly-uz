@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 
 export function CTA() {
   return (
-    <section className="container-page pt-20 sm:pt-24">
-      <div className="relative overflow-hidden rounded-3xl gradient-brand p-8 sm:p-12 lg:p-16 text-white shadow-float">
+    <section className="container-page pt-16 sm:pt-24">
+      <div className="relative overflow-hidden rounded-3xl gradient-brand p-6 sm:p-12 lg:p-16 text-white shadow-float">
         <div
           className="absolute inset-0 opacity-20 [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_70%)]"
           aria-hidden="true"
@@ -14,7 +14,7 @@ export function CTA() {
         </div>
         <div className="relative grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] items-center gap-8">
           <div>
-            <h3 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1]">
+            <h3 className="font-display text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1]">
               Bugundan boshlang.
               <br />
               Ta'limingizni o'sishga yo'naltiring.

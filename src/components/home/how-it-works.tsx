@@ -60,7 +60,7 @@ export function HowItWorks() {
         title="Ikki tomonlama oddiy jarayon"
         description="Ikki rolda — ustoz yoki o'quv markazi — foydalanuvchiga eng qulay yo'l."
       />
-      <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div className="mt-8 sm:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
         <Lane
           title="Ustozlar uchun"
           subtitle="Ish qidiruvchilar yo'li"
@@ -97,7 +97,7 @@ function Lane({
   accent?: boolean;
 }) {
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/50 backdrop-blur-xl p-6 sm:p-8 shadow-elevated">
+    <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/50 backdrop-blur-xl p-5 sm:p-8 shadow-elevated">
       <div
         className="absolute -top-20 -right-20 size-60 rounded-full blur-3xl opacity-60"
         style={{
@@ -119,7 +119,7 @@ function Lane({
           {icon}
           {subtitle}
         </span>
-        <h3 className="mt-3 font-display text-2xl font-bold tracking-tight">
+        <h3 className="mt-3 font-display text-xl sm:text-2xl font-bold tracking-tight">
           {title}
         </h3>
 

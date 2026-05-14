@@ -72,12 +72,12 @@ export default async function VacancyDetailPage({ params }: Props) {
         </Link>
       </div>
 
-      <div className="container-page pt-6 pb-20 grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8">
-        <article className="space-y-6">
-          <header className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8 shadow-soft">
-            <div className="flex items-start gap-5">
+      <div className="container-page pt-6 pb-16 sm:pb-20 grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 lg:gap-8">
+        <article className="space-y-5 sm:space-y-6">
+          <header className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 sm:p-8 shadow-soft">
+            <div className="flex items-start gap-3.5 sm:gap-5">
               <div
-                className="grid place-items-center size-16 rounded-2xl shrink-0"
+                className="grid place-items-center size-12 sm:size-16 rounded-2xl shrink-0"
                 style={{
                   backgroundColor: subject?.color
                     ? `color-mix(in oklch, ${subject.color} 18%, transparent)`
@@ -85,7 +85,7 @@ export default async function VacancyDetailPage({ params }: Props) {
                   color: subject?.color ?? "var(--foreground)",
                 }}
               >
-                <Building2 className="size-7" />
+                <Building2 className="size-6 sm:size-7" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
@@ -99,7 +99,7 @@ export default async function VacancyDetailPage({ params }: Props) {
                   {employment && <Badge>{employment}</Badge>}
                   {format && <Badge variant="outline">{format}</Badge>}
                 </div>
-                <h1 className="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
+                <h1 className="mt-3 font-display text-xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight">
                   {v.title}
                 </h1>
                 <p className="mt-2 text-muted inline-flex items-center gap-1.5">
@@ -164,11 +164,11 @@ export default async function VacancyDetailPage({ params }: Props) {
         </article>
 
         <aside className="lg:sticky lg:top-24 h-fit space-y-4">
-          <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-soft">
+          <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 sm:p-6 shadow-soft">
             <p className="text-xs uppercase tracking-wide text-subtle">
               Oylik maosh
             </p>
-            <p className="mt-1 font-display text-3xl font-bold">
+            <p className="mt-1 font-display text-2xl sm:text-3xl font-bold">
               {formatSalary(v.salaryMin, v.salaryMax)}
             </p>
             <dl className="mt-5 grid grid-cols-2 gap-3 text-sm">
@@ -237,12 +237,12 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8 shadow-soft">
+    <section className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 sm:p-8 shadow-soft">
       <div className="flex items-center gap-2.5 mb-4">
         <span className="grid place-items-center size-8 rounded-lg bg-brand-100 text-brand-700 dark:bg-brand-900/40 dark:text-brand-300">
           {icon}
         </span>
-        <h2 className="font-display text-xl font-semibold">{title}</h2>
+        <h2 className="font-display text-lg sm:text-xl font-semibold">{title}</h2>
       </div>
       {children}
     </section>

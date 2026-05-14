@@ -68,11 +68,11 @@ export default async function TeacherDetailPage({ params }: Props) {
         </Link>
       </div>
 
-      <div className="container-page pt-6 pb-20 grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8">
-        <article className="space-y-6">
-          <header className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8 shadow-soft">
-            <div className="flex flex-col sm:flex-row sm:items-start gap-5">
-              <Avatar name={t.name} size={96} className="shrink-0" />
+      <div className="container-page pt-6 pb-16 sm:pb-20 grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 lg:gap-8">
+        <article className="space-y-5 sm:space-y-6">
+          <header className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 sm:p-8 shadow-soft">
+            <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-5">
+              <Avatar name={t.name} size={88} className="shrink-0" />
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
                   {t.available ? (
@@ -86,7 +86,7 @@ export default async function TeacherDetailPage({ params }: Props) {
                   <Badge variant="brand">{level}</Badge>
                   {format && <Badge>{format}</Badge>}
                 </div>
-                <h1 className="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
+                <h1 className="mt-3 font-display text-2xl sm:text-4xl font-bold tracking-tight leading-tight">
                   {t.name}
                 </h1>
                 <p className="mt-1 text-muted">{t.title}</p>
@@ -160,11 +160,11 @@ export default async function TeacherDetailPage({ params }: Props) {
         </article>
 
         <aside className="lg:sticky lg:top-24 h-fit space-y-4">
-          <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-soft">
+          <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 sm:p-6 shadow-soft">
             <p className="text-xs uppercase tracking-wide text-subtle">
               Soatbay narx
             </p>
-            <p className="mt-1 font-display text-3xl font-bold">
+            <p className="mt-1 font-display text-2xl sm:text-3xl font-bold">
               {formatSalary(t.hourlyRate)}
             </p>
             {t.monthlyRate && (
@@ -227,12 +227,12 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8 shadow-soft">
+    <section className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 sm:p-8 shadow-soft">
       <div className="flex items-center gap-2.5 mb-4">
         <span className="grid place-items-center size-8 rounded-lg bg-brand-100 text-brand-700 dark:bg-brand-900/40 dark:text-brand-300">
           {icon}
         </span>
-        <h2 className="font-display text-xl font-semibold">{title}</h2>
+        <h2 className="font-display text-lg sm:text-xl font-semibold">{title}</h2>
       </div>
       {children}
     </section>

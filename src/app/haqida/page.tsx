@@ -92,12 +92,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="container-page pt-20">
-        <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-8 sm:p-10 shadow-soft">
+      <section className="container-page pt-16 sm:pt-20">
+        <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-10 shadow-soft">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-100 text-brand-800 dark:bg-brand-900/40 dark:text-brand-200 px-2.5 py-1 text-xs font-medium">
             <Sparkles className="size-3" /> Bizning missiya
           </span>
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl font-bold tracking-tight max-w-3xl">
+          <h2 className="mt-4 font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight max-w-3xl">
             O'zbekistondagi har bir ustoz va har bir o'quv markaziga teng imkoniyat
             yaratish.
           </h2>
@@ -110,13 +110,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="faq" className="container-page pt-20">
+      <section id="faq" className="container-page pt-16 sm:pt-20">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
           <div>
             <span className="text-xs font-medium uppercase tracking-wide text-brand-700 dark:text-brand-300">
               FAQ
             </span>
-            <h2 className="mt-1 font-display text-3xl sm:text-4xl font-bold tracking-tight">
+            <h2 className="mt-1 font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
               Ko'p so'raladigan savollar
             </h2>
           </div>
@@ -137,11 +137,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="contact" className="container-page pt-20 pb-10">
-        <div className="rounded-3xl gradient-brand p-8 sm:p-12 text-white shadow-float relative overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-8 items-center relative">
+      <section id="contact" className="container-page pt-16 sm:pt-20 pb-10">
+        <div className="rounded-3xl gradient-brand p-6 sm:p-12 text-white shadow-float relative overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-6 md:gap-8 items-center relative">
             <div>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
                 Biz bilan bog'laning
               </h2>
               <p className="mt-3 text-white/85 max-w-xl">
